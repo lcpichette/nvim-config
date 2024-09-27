@@ -27,6 +27,27 @@ git clone https://github.com/lcpichette/nvim-config.git ~/.config/nvim
 nvim
 ```
 
+## Preview
+
+#### Demonstrating LSP working out of the gate on a file with multiple errors, and markdown preview in normal mode.
+
+https://github.com/user-attachments/assets/b68d82eb-188e-4274-911f-12a3d2330466
+
+#### Demonstrating harpoon
+
+`<Leader>Ha` to Add a Harpoon target
+`<Leader>Ht` to look at Harpoon targets with Telescope (fuzzy search)
+`<Leader>Hl` to List Harpoon targets
+
+https://github.com/user-attachments/assets/9994ad40-b68c-4fb0-9b15-c92c98b27cea
+
+#### Demonstrating To-Dos
+
+`<Leader>T` to view a list your todos/bugs/etc
+
+https://github.com/user-attachments/assets/a2eba831-b598-47d5-a9fe-fa53d0289d7e
+
+
 ## Outstanding Differences
 
 1. Harpoon
