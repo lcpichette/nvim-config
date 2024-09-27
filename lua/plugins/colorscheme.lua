@@ -7,7 +7,7 @@ return {
     -- configuration options...
     theme = "wave",
     background = {
-      dark = "wave",
+      dark = "dragon",
     },
   },
 }
