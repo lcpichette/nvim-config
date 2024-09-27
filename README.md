@@ -2,6 +2,8 @@
 
 Leverages [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
+Also consider reviewing my [.tmux.conf](https://github.com/lcpichette/tmux-conf/blob/main/.tmux.conf) uses tpm to synergize with this nvim conf
+
 ## Installation
 
 #### Make a backup of your current nvim and shared folder
