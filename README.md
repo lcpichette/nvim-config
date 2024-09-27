@@ -24,3 +24,13 @@ git clone https://github.com/lcpichette/nvim-config.git ~/.config/nvim
 ```shell
 nvim
 ```
+
+## Outstanding Differences
+
+1. Harpoon
+2. tmux-navigator
+3. todo-highlighter
+4. markview
+5. updated colorscheme
+6. Typescript support out the rip
+7. custom autocmds and cmds that make life easier w/ plugins like harpoon
