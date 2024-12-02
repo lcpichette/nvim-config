@@ -1,32 +1,7 @@
 return {
-  "rebelot/kanagawa.nvim",
-  name = "kanagawa",
-  lazy = false,
-  priority = 1000,
-  opts = {
-    -- configuration options...
-    theme = "wave",
-    background = {
-      dark = "dragon",
-    },
-  },
+  "nyoom-engineering/oxocarbon.nvim",
+  -- Add in any other configuration;
+  --   event = foo,
+  --   config = bar
+  --   end,
 }
--- {
---   "projekt0n/github-nvim-theme",
---   name = "github-theme",
---   lazy = false, -- make sure we load this during startup if it is your main colorscheme
---   priority = 1000, -- make sure to load this before all the other start plugins
---   config = function()
---     require("github-theme").setup {
---       -- ...
---     }
---
---     vim.cmd "colorscheme github_dark_dimmed"
---   end,
--- },
-
--- "AlexvZyl/nordic.nvim",
--- name = "nordic",
--- lazy = false,
--- priority = 1000,
--- config = function() require("nordic").load() end,

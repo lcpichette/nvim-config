@@ -6,14 +6,16 @@ return {
     opts = {
       setup_handlers = {
         -- add custom handler
-        tsserver = function(_, opts) require("typescript").setup { server = opts } end,
+        tsserver = function(_, opts)
+          require("typescript").setup { server = {
+            opts,
+            enabled = false,
+          } }
+        end,
       },
-    },
-  },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    opts = {
-      ensure_installed = { "ts_ls" }, -- automatically install lsp
+      features = {
+        inlay_hints = false,
+      },
     },
   },
 }

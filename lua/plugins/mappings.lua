@@ -1,28 +1,5 @@
-local harpoon = require "harpoon"
-
-harpoon:setup()
-harpoon:setup {}
-
 -- basic telescope configuration
 local conf = require("telescope.config").values
-
-local function toggle_telescope(harpoon_files)
-  local file_paths = {}
-  for _, item in ipairs(harpoon_files.items) do
-    table.insert(file_paths, item.value)
-  end
-
-  require("telescope.pickers")
-    .new({}, {
-      prompt_title = "Harpoon",
-      finder = require("telescope.finders").new_table {
-        results = file_paths,
-      },
-      previewer = conf.file_previewer {},
-      sorter = conf.generic_sorter {},
-    })
-    :find()
-end
 
 return {
   {
@@ -32,25 +9,6 @@ return {
       mappings = {
         -- first key is the mode
         n = {
-          -- SYSTEM
-          ["<leader>rn"] = {
-            function() vim.wo.relativenumber = not vim.wo.relativenumber end,
-            desc = "Toggle relative line numbers",
-          },
-          -- HARPOON
-          ["<Leader>H"] = { desc = "Harpoon" },
-          ["<Leader>Ha"] = {
-            function() harpoon:list():add() end,
-            desc = "Add new harpoon target",
-          },
-          ["<Leader>Hl"] = {
-            function() harpoon.ui:toggle_quick_menu(harpoon:list()) end,
-            desc = "List harpoon targets",
-          },
-          ["<Leader>Ht"] = {
-            function() toggle_telescope(harpoon:list()) end,
-            desc = "Open harpoon window",
-          },
           -- BUFFER
           ["<Leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
           ["<Leader>bD"] = {
@@ -66,6 +24,10 @@ return {
           ["<Leader>b"] = { desc = "Buffers" },
           -- quick save
           -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+          ["<Leader>a"] = {
+            desc = "🏹 Arrow",
+            function() require("arrow.persist").show_menu() end,
+          },
         },
         t = {
           -- setting a mapping to false will disable it

@@ -14,15 +14,18 @@ return {
       diagnostics_mode = 3, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
       highlighturl = true, -- highlight URLs at start
       notifications = true, -- enable notifications at start
+      inlay_hints_enabled = false,
     },
     -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
     diagnostics = {
       virtual_text = true,
       underline = true,
     },
+
     -- vim options can be configured here
     options = {
       opt = { -- vim.opt.<key>
+        showtabline = 0,
         relativenumber = true, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
         spell = false, -- sets vim.opt.spell
@@ -62,6 +65,10 @@ return {
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
+        ["<leader>O"] = {
+          function() require("chadtree").Open() end,
+          desc = "File Tree",
+        },
       },
     },
   },

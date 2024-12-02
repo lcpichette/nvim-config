@@ -25,25 +25,18 @@ return {
   -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
   {
     "jay-babu/mason-null-ls.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = { "williamboman/mason.nvim", "nvimtools/none-ls.nvim" },
+    config = function()
+      require("mason-null-ls").setup {
+        automatic_installation = true,
+        handlers = {},
+      }
+    end,
     -- overrides `require("mason-null-ls").setup(...)`
     opts = {
       ensure_installed = {
-        -- "beautysh", --bash
-        -- "biome", --faster than prettier,works w/ prettier config
-        -- "cbfmt", --markdown
-        -- "commitlint", --github commit guidelines
-        -- "eslint_d", --faster than eslint
-        -- "fixjson", --json
-        -- "fourmolu", --haskell
-        -- "hlint", --html
-        -- "htmlhint", --html
-        -- "jsonlint", --json
-        -- "oxlint", --js,ts
-        -- "prettierd", --js,ts,angular
-        -- "quick_lint_js", --js
-        -- "stylelint", --css,scss
         -- "stylua", --lua
-        -- add more arguments for adding more null-ls sources
       },
     },
   },
