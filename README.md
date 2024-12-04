@@ -4,6 +4,12 @@ Leverages [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
 Also consider reviewing my [.tmux.conf](https://github.com/lcpichette/tmux-conf/blob/main/.tmux.conf) uses tpm to synergize with this nvim conf
 
+
+You can see the theme of the config while I do a basic search-and-replace with grug-far.nvim:
+
+https://github.com/user-attachments/assets/7aba5ed2-6aa1-4e76-8f2d-d7a8010c92e2
+
+
 ## Installation
 
 #### Make a backup of your current nvim and shared folder
@@ -29,32 +35,28 @@ nvim
 
 ## Preview
 
-#### Demonstrating LSP working out of the gate on a file with multiple errors, and markdown preview in normal mode.
+The LSPs that exist are currently configured for javascript + typescript. Feel free to add whatever LSPs you'd like via `:Mason`.
 
-https://github.com/user-attachments/assets/b68d82eb-188e-4274-911f-12a3d2330466
+#### Demonstrating Arrow
 
-#### Demonstrating harpoon
+Where ; is the local leader.
 
-`<Leader>Ha` to Add a Harpoon target
-`<Leader>Ht` to look at Harpoon targets with Telescope (fuzzy search)
-`<Leader>Hl` to List Harpoon targets
+`;s` to Save a Arrow target
+`;` to List Arrow targets
 
-https://github.com/user-attachments/assets/9994ad40-b68c-4fb0-9b15-c92c98b27cea
-
-#### Demonstrating To-Dos
-
-`<Leader>T` to view a list your todos/bugs/etc
-
-https://github.com/user-attachments/assets/a2eba831-b598-47d5-a9fe-fa53d0289d7e
+https://github.com/user-attachments/assets/05203e3a-0354-44c4-8e3e-362342ef728c
 
 
 ## Outstanding Differences
 
-1. Harpoon
+1. Arrow
 2. tmux-navigator
 3. todo-highlighter
 4. markview
 5. updated colorscheme
 6. Typescript support out the rip
-7. custom autocmds and cmds that make life easier w/ plugins like harpoon
-    1. Harpoon in particular can't be easily transferred from lazyvim to AstroVim as the way you declare mappings is a bit different. This fixes that, and instead of <leader>a and <C-h> we have <leader>Ha and <leader>Hl respectively. Having all Harpoon commands under <leader>H makes it easy to organize them and visually see them on which-key.
+7. Precognition -- shows motions (w,W,^,0,E,etc)
+8. flash -- Leap alternative (`s<letter><specifier>`).
+9. twilight -- Run :Twilight for scope-focused coding.
+10. zk -- for note taking. If I get enough requests I'll post my zk config and abbr's which have made me fall in love with zk.
+11. Grug-far -- multi-file search and replace
