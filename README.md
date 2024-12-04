@@ -2,9 +2,6 @@
 
 Leverages [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
-Also consider reviewing my [.tmux.conf](https://github.com/lcpichette/tmux-conf/blob/main/.tmux.conf) uses tpm to synergize with this nvim conf
-
-
 You can see the theme of the config while I do a basic search-and-replace with grug-far.nvim:
 
 https://github.com/user-attachments/assets/7aba5ed2-6aa1-4e76-8f2d-d7a8010c92e2
