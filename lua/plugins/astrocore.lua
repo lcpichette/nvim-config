@@ -69,6 +69,7 @@ return {
           function() require("chadtree").Open() end,
           desc = "File Tree",
         },
+        ["<leader>gf"] = { "<cmd>GrugFar<cr>", desc = "Open GrugFar" },
       },
     },
   },

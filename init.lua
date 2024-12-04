@@ -1,5 +1,11 @@
 -- This file simply bootstraps the installation of Lazy.nvim and then calls other files for execution
 vim.g.editorconfig = false
+local keymap = vim.api.nvim_set_keymap
+keymap("n", "<C-k>", "<Cmd>wincmd k<CR>", { noremap = true, silent = true })
+keymap("n", "<C-j>", "<Cmd>wincmd j<CR>", { noremap = true, silent = true })
+keymap("n", "<C-h>", "<Cmd>wincmd h<CR>", { noremap = true, silent = true })
+keymap("n", "<C-l>", "<Cmd>wincmd l<CR>", { noremap = true, silent = true })
+
 vim.api.nvim_create_autocmd("BufEnter", {
   callback = function()
     vim.opt.tabstop = 4

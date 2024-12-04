@@ -28,6 +28,7 @@ return {
             desc = "🏹 Arrow",
             function() require("arrow.persist").show_menu() end,
           },
+          ["<Leader>e"] = {},
         },
         t = {
           -- setting a mapping to false will disable it
