@@ -1,3 +1,4 @@
+-- Relatively slow plugin, disabling for performance
 return {
   "wellle/context.vim",
   config = function()

@@ -31,7 +31,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 vim.lsp.inlay_hint.enable(false)
-
 -- validate that lazy is available
 if not pcall(require, "lazy") then
   -- stylua: ignore
@@ -42,6 +41,33 @@ end
 
 vim.opt.swapfile = false
 vim.api.nvim_set_hl(0, "IblScope", { fg = "#b496e7", underline = false })
+
+-- LUA ROCKS --
+local rocks_config = {
+  rocks_path = vim.env.HOME .. "/.local/share/nvim/rocks",
+}
+
+vim.g.rocks_nvim = rocks_config
+
+local luarocks_path = {
+  vim.fs.joinpath(rocks_config.rocks_path, "share", "lua", "5.1", "?.lua"),
+  vim.fs.joinpath(rocks_config.rocks_path, "share", "lua", "5.1", "?", "init.lua"),
+}
+package.path = package.path .. ";" .. table.concat(luarocks_path, ";")
+
+local luarocks_cpath = {
+  vim.fs.joinpath(rocks_config.rocks_path, "lib", "lua", "5.1", "?.so"),
+  vim.fs.joinpath(rocks_config.rocks_path, "lib64", "lua", "5.1", "?.so"),
+  -- Remove the dylib and dll paths if you do not need macos or windows support
+  vim.fs.joinpath(rocks_config.rocks_path, "lib", "lua", "5.1", "?.dylib"),
+  vim.fs.joinpath(rocks_config.rocks_path, "lib64", "lua", "5.1", "?.dylib"),
+  vim.fs.joinpath(rocks_config.rocks_path, "lib", "lua", "5.1", "?.dll"),
+  vim.fs.joinpath(rocks_config.rocks_path, "lib64", "lua", "5.1", "?.dll"),
+}
+package.cpath = package.cpath .. ";" .. table.concat(luarocks_cpath, ";")
+
+vim.opt.runtimepath:append(vim.fs.joinpath(rocks_config.rocks_path, "lib", "luarocks", "rocks-5.1", "*", "*"))
+-- END LUA ROCKS --
 
 require "lazy_setup"
 require "polish"

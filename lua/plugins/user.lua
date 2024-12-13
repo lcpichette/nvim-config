@@ -19,14 +19,17 @@ return {
   {
     "goolord/alpha-nvim",
     opts = function(_, opts)
+      opts.section.buttons.val = {}
       -- customize the dashboard header
-      opts.section.header.val = {
-        "       :       |                    |    ",
-        "   .     |          :        .       *   ",
-        "      .                  .     :         ",
-        "    |          .       |        .        ",
-        "  | .      |    .         |           ",
-      }
+      opts.section.header.val = [[
+        _                ___       _.--.
+        \`.|\..----...-'`   `-._.-'_.-'`
+        /  ' `         ,       __.--'
+        )/' _/     \   `-_,   /
+        `-'" `"\_  ,_.-;_.-\_ ',     
+            _.-'_./   {_.'   ; /
+bug.       {_.-``-'         {_/
+]]
       return opts
     end,
   },
