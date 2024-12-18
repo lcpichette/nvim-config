@@ -1,5 +1,6 @@
 -- basic telescope configuration
 local conf = require("telescope.config").values
+local actions = require "telescope.actions"
 
 return {
   {
@@ -29,12 +30,14 @@ return {
             function() require("arrow.persist").show_menu() end,
           },
           ["<Leader>e"] = {},
+          ["<leader>d"] = { ":Dooing<CR>", desc = "Open Dooing" },
         },
         t = {
           -- setting a mapping to false will disable it
           -- ["<esc>"] = false,
         },
       },
+      polish = function() vim.api.nvim_create_user_command("D", "Dooing", {}) end,
     },
   },
   {
